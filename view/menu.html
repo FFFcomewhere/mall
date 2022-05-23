@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu</title>
+
+    <script>
+
+        function Add(){
+            const Http = new XMLHttpRequest();
+            const url='http://localhost:8080/api/v1/users';
+            Http.open("POST", url);
+            Http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+            Http.send('user_name=wsj1&&password=1213');
+
+            Http.onreadystatechange = (e) => {
+                console.log(Http.responseText)
+            }
+        }
+
+        function Get(){
+            const Http = new XMLHttpRequest();
+            const url='http://localhost:8080/api/v1/users';
+            Http.open("GET", url);
+            Http.send();
+
+            Http.onreadystatechange = (e) => {
+                console.log(Http.responseText)
+            }
+        }
+
+        function Update(){
+            const Http = new XMLHttpRequest();
+            const url='http://localhost:8080/api/v1/users';
+            Http.open("PUT", url);
+            Http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            Http.send(this.param);
+
+            Http.onreadystatechange = (e) => {
+                console.log(Http.responseText)
+            }
+        }
+
+        function Delete(){
+            const Http = new XMLHttpRequest();
+            const url='http://localhost:8080/api/v1/users';
+            Http.open("PUT", url);
+            Http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            Http.send(this.param);
+
+            Http.onreadystatechange = (e) => {
+                console.log(Http.responseText)
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+
+<p id="demo">菜单</p>
+
+<select>
+    <option value ="users">users</option>
+    <option value ="product">product</option>
+    <option value="cart">cart</option>
+    <option value="adress">adress</option>
+</select>
+
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+
+<button type="button" onclick="Add()">添加</button>
+<button type="button" onclick="Get()">查询</button>
+<button type="button" onclick="Update()">修改</button>
+<button type="button" onclick="Delete()">删除</button>
+
+</body>
+</html>

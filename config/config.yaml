@@ -1,0 +1,16 @@
+mysql:
+  Type:       'mysql'
+  User:       'go_mysql'
+  Password:   '269266'
+  Host:       '127.0.0.1:3306'
+  Name:       'shop_demo'
+  TablePrefix:
+  TestName:
+
+server:
+  #debug or release
+  RunMode:  'debug'
+  Host: 'http://127.0.0.1'
+  HttpPort: 8080
+  ReadTomeout:  60
+  WriteTimeout: 60
